@@ -34,3 +34,18 @@ class Clothing(Product):
 
     def get_details(self):
         return f"Одежда: {self.name}, Размер: {self.size}, Материал: {self.material}, Цена: {self.price} руб."
+
+# Для ДЗ Добавить новый тип продуктов (например, бытовая химия).
+
+class HouseholdChemicals(Product):
+    """
+    Класс, представляющий бытовую химию, наследующий класс Product.
+    """
+    def __init__(self, name, price, concentration, hazard_class):
+        super().__init__(name, price)
+        self.concentration = concentration
+        self.hazard_class = hazard_class
+
+    def get_details(self):
+        return (f"Бытовая химия: {self.name}, Концентрация: {self.concentration}, Класс опасности: {self.hazard_class}, Цена: {self.price} руб.")
+

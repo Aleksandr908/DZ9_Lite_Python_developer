@@ -1,4 +1,8 @@
 # 3. Класс для управления корзиной покупок
+# В классе ShoppingCart добавить функционал, чтобы при вызове get_details выводилась
+# информация, например, ("покупатель такой-то приобрел то-то, "
+# общая сумма, зарегистрировал покупки пользователь админ").
+
 
 class ShoppingCart:
     """
@@ -26,6 +30,8 @@ class ShoppingCart:
         total = sum(item["Продукт"].price * item["количество"] for item in self.items)
         return total
 
+
+
     def get_details(self):
         """
         Возвращает детализированную информацию о содержимом корзины и общей стоимости.
@@ -35,3 +41,5 @@ class ShoppingCart:
             details += f"{item['Продукт'].get_details()}, Количество: {item['количество']}\n"
         details += f"Общее: {self.get_total()} руб"
         return details
+
+
