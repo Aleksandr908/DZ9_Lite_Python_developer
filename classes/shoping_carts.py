@@ -40,12 +40,12 @@ class ShoppingCart:
         """
         Возвращает детализированную информацию о содержимом корзины и общей стоимости.
         """
-        details = f"Покупатель: {self.customer.get_details()}\n" #Добавлено
+        details = f"{self.customer.get_details()}\n" #Добавлено
         details += "Корзина покупок:\n"
         for item in self.items:
             details += f"{item['Продукт'].get_details()}, Количество: {item['количество']}\n"
         details += f"Общее: {self.get_total()} руб\n"
-        details += f"Зарегистрировал покупки пользователь Администратор: {self.admin.get_details()}" #Добавлено
+        details += f"Зарегистрировал покупки пользователь {self.admin.get_details()}" #Добавлено
         return details
 
 
